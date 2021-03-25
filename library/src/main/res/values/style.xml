@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--CustomDialog-->
+    <style name="customDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item><!--取消默认Dialog的windowFrame框-->
+        <item name="android:windowNoTitle">true</item><!--设置无标题Dialog-->
+        <item name="android:backgroundDimEnabled">true</item><!--是否四周变暗-->
+        <item name="android:windowIsFloating">true</item><!-- 是否悬浮在activity上 -->
+        <item name="android:windowContentOverlay">@null</item><!-- 取消默认ContentOverlay背景 -->
+        <item name="android:windowBackground">@android:color/transparent</item><!--取消window默认背景 不然四角会有黑影-->
+    </style>
+    <style name="dialogWindowAnim" parent="android:Animation" mce_bogus="1">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit_anim</item>
+    </style>
+    <style name="MyDialogStyle">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+</resources>
