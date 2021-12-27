@@ -4,4 +4,10 @@
     <color name="color_fg_order_lv_adapter_type">#666</color>
     <color name="white">#f5f3f3</color>
     <color name="vifrification">#00000000</color>
+    <!---->
+    <color name="dialogcolorsolid">#FFFFFF</color>
+    <color name="dialogcolorstroke">#FFFFFF</color>
+    <color name="blueclose">#054AFA</color>
+    <color name="content">#333333</color>
+    <color name="bluehead">#054AFA</color>
 </resources>

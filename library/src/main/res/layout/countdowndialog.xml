@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/iosroundbg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp"
+        android:text="预约停车要求"
+        android:gravity="center"
+        android:textColor="@color/bluehead"
+        android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp"
+        android:text="1.完成车牌绑定和车辆认证 \n2.当前没有路边停车欠费订单"
+        android:gravity="center"
+        android:textColor="@color/content"
+        android:textSize="16sp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_fg_order_lv_adapter_type"
+        ></View>
+    <TextView
+
+        android:id="@+id/close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp"
+        android:text="我知道了"
+        android:gravity="center"
+        android:textColor="@color/blueclose"
+        android:textSize="18sp"/>
+
+</LinearLayout>

@@ -10,8 +10,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ydtx.jobmanage.library.dialog.CloseDialog;
+import com.ydtx.jobmanage.library.dialog.CountDowmDialog;
 import com.ydtx.jobmanage.library.dialog.CustomDialog;
 import com.ydtx.jobmanage.library.dialog.ListViewDialog;
+import com.ydtx.jobmanage.library.dialog.baseDialog.CountDownBaseDialog;
+import com.ydtx.jobmanage.library.interfaces.OnDialogCountDownLisener;
 import com.ydtx.jobmanage.library.loading.LoadingDailog;
 
 import java.util.Arrays;
@@ -35,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         butterknife.ButterKnife.bind(this);
     }
 
-    @butterknife.OnClick({R.id.button1, R.id.button2, R.id.button3, R.id.button4})
+    @butterknife.OnClick({R.id.button1, R.id.button2, R.id.button3, R.id.button4, R.id.button5})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.button1:
@@ -94,6 +97,26 @@ public class MainActivity extends AppCompatActivity {
                     }
                 },2000);
                 break;
+            case R.id.button5:
+               showcountDownDialog();
+                break;
         }
+    }
+
+    private void showcountDownDialog() {
+        CountDowmDialog countDowmDialog = new CountDowmDialog(this);
+        countDowmDialog.setOnDialogCountDownLisener(new OnDialogCountDownLisener() {
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        });
+        countDowmDialog.show();
+
     }
 }
