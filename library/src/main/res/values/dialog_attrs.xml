@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SIosSwitch">
+        <attr name="sIosSwitchDefaultStyle" format="reference"></attr>
+    </declare-styleable>
+    <declare-styleable name="IosSwitchStyleable">
+        <attr name="roundcolor" format="color"></attr><!--round-->
+        <attr name="mOpenSlotColor" format="color"></attr><!--offcolor-->
+        <attr name="mOffSlotColor" format="color"></attr>
+        <attr name="mBasePlaneColor" format="color"></attr><!--bg-->
+    </declare-styleable>
+</resources>

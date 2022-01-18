@@ -10,4 +10,10 @@
     <color name="blueclose">#054AFA</color>
     <color name="content">#333333</color>
     <color name="bluehead">#054AFA</color>
+    <color name="mBasePlaneColor">#4ebb7f</color>
+    <color name="mOpenSlotColor">#4ebb7f</color>
+    <color name="mOffSlotColor">#EEEEEE</color>
+    <color name="roundcolor">#FFFFFF</color>
+    <color name="divider_01">#FFEEEEEE</color>
+    <color name="bg_ripple">#26000000</color>
 </resources>

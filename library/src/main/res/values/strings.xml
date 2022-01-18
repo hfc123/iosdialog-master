@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Library</string>
+    <string name="park_user_protocol">《用户协议》</string>
+    <string name="park_privacy_policy">《隐私政策》</string>
 </resources>

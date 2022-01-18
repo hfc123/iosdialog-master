@@ -4,16 +4,19 @@ import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
+import com.ydtx.jobmanage.library.R;
 import com.ydtx.jobmanage.library.dialog.GestureUtils;
 
 /**
@@ -26,9 +29,46 @@ public class IosSwitch extends View implements View.OnClickListener {
 
     private final int BORDER_WIDTH = 2;
 
-    private int mBasePlaneColor = Color.parseColor("#4ebb7f");//
-    private int mOpenSlotColor = Color.parseColor("#4ebb7f");//
-    private int mOffSlotColor = Color.parseColor("#EEEEEE");//
+    private int mBasePlaneColor ;//
+    private int mOpenSlotColor ;//
+    private int mOffSlotColor ;//
+    private int roundcolor;
+
+    public int getmBasePlaneColor() {
+        return mBasePlaneColor;
+    }
+
+    public void setmBasePlaneColor(int mBasePlaneColor) {
+        this.mBasePlaneColor = mBasePlaneColor;
+        invalidate();
+    }
+
+    public int getmOpenSlotColor() {
+        return mOpenSlotColor;
+    }
+
+    public void setmOpenSlotColor(int mOpenSlotColor) {
+        this.mOpenSlotColor = mOpenSlotColor;
+        invalidate();
+    }
+
+    public int getmOffSlotColor() {
+        return mOffSlotColor;
+    }
+
+    public void setmOffSlotColor(int mOffSlotColor) {
+        this.mOffSlotColor = mOffSlotColor;
+        invalidate();
+    }
+
+    public int getRoundcolor() {
+        return roundcolor;
+    }
+
+    public void setRoundcolor(int roundcolor) {
+        this.roundcolor = roundcolor;
+        invalidate();
+    }
 
     private int mSlotColor;
 
@@ -57,15 +97,27 @@ public class IosSwitch extends View implements View.OnClickListener {
     }
 
     public IosSwitch(Context context) {
-        super(context);
-        init(context);
+        this(context,null);
 
     }
 
     public IosSwitch(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(context);
+        this(context, attrs,0);
+
     }
+
+    public IosSwitch(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        //Retrieve styles attributes
+        Resources res = context.getResources();
+        init(context);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.IosSwitchStyleable,R.attr.sIosSwitchDefaultStyle,  R.style.IosSwitchDefaultStyle);
+        mBasePlaneColor=a.getColor(R.styleable.IosSwitchStyleable_mBasePlaneColor,res.getColor(R.color.white));//
+        mOpenSlotColor =a.getColor(R.styleable.IosSwitchStyleable_mOpenSlotColor,res.getColor(R.color.white));
+        mOffSlotColor  =a.getColor(R.styleable.IosSwitchStyleable_mOffSlotColor,res.getColor(R.color.white));
+        roundcolor     =a.getColor(R.styleable.IosSwitchStyleable_roundcolor,res.getColor(R.color.white));
+    }
+
 
     private void init(Context context) {
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -181,7 +233,7 @@ public class IosSwitch extends View implements View.OnClickListener {
         mPaint.setColor(roundcolor);
         canvas.drawRoundRect(mRect, mSpotRadius, mSpotRadius, mPaint);
     }
-    private int roundcolor=Color.WHITE;
+
     //
     public void setRoundColor(int color){
         roundcolor=color;

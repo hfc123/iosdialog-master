@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/edittext_bg2"
+   >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/layout_24"
+            android:gravity="center"
+            android:text="用户协议和隐私政策"
+            android:textColor="@color/text_02"
+            android:textSize="@dimen/text_17" />
+
+        <TextView
+            android:id="@+id/protocol_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/layout_18"
+            android:layout_marginTop="@dimen/layout_10"
+            android:layout_marginRight="@dimen/layout_18"
+            android:layout_marginBottom="@dimen/layout_20"
+            android:textColor="@color/text_02"
+            android:textSize="@dimen/text_14" />
+
+        <View style="@style/DividerVerticalStyle" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:divider="@drawable/divider_horizontal_01"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/protocol_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_ripple"
+                android:gravity="center"
+                android:text="暂不使用"
+                android:textColor="@color/text_02" />
+
+            <TextView
+                android:id="@+id/protocol_ok"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_ripple"
+                android:gravity="center"
+                android:text="同意"
+                android:textColor="@color/mBasePlaneColor" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

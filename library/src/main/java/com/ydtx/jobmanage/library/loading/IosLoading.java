@@ -11,14 +11,14 @@ import com.ydtx.jobmanage.library.R;
 /**
  * Created by tjy on 2017/6/19.
  */
-public class LoadingDailog extends Dialog{
+public class IosLoading extends Dialog{
 
 
-    public LoadingDailog(Context context) {
+    public IosLoading(Context context) {
         super(context);
     }
 
-    public LoadingDailog(Context context, int themeResId) {
+    public IosLoading(Context context, int themeResId) {
         super(context, themeResId);
     }
 
@@ -59,11 +59,11 @@ public class LoadingDailog extends Dialog{
             return this;
         }
 
-        public LoadingDailog create(){
+        public IosLoading create(){
 
             LayoutInflater inflater = LayoutInflater.from(context);
             View view=inflater.inflate(R.layout.dialog_loading,null);
-            LoadingDailog loadingDailog=new LoadingDailog(context, R.style.MyDialogStyle);
+            IosLoading loadingDailog=new IosLoading(context, R.style.MyDialogStyle);
             TextView msgText= (TextView) view.findViewById(R.id.tipTextView);
             if(isShowMessage){
                 msgText.setText(message);

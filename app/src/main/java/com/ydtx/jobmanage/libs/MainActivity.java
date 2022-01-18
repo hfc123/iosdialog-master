@@ -13,9 +13,12 @@ import com.ydtx.jobmanage.library.dialog.CloseDialog;
 import com.ydtx.jobmanage.library.dialog.CountDowmDialog;
 import com.ydtx.jobmanage.library.dialog.CustomDialog;
 import com.ydtx.jobmanage.library.dialog.ListViewDialog;
+import com.ydtx.jobmanage.library.dialog.ProtocolDialog;
 import com.ydtx.jobmanage.library.dialog.baseDialog.CountDownBaseDialog;
 import com.ydtx.jobmanage.library.interfaces.OnDialogCountDownLisener;
-import com.ydtx.jobmanage.library.loading.LoadingDailog;
+import com.ydtx.jobmanage.library.loading.IosLoading;
+import com.ydtx.jobmanage.library.loading.IosLoading;
+import com.ydtx.jobmanage.library.loading.RabbitLoading;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         butterknife.ButterKnife.bind(this);
     }
 
-    @butterknife.OnClick({R.id.button1, R.id.button2, R.id.button3, R.id.button4, R.id.button5})
+    @butterknife.OnClick({R.id.button1, R.id.button2, R.id.button3, R.id.button4, R.id.button5,R.id.button6, R.id.button7})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.button1:
@@ -72,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.button3:
                 final  List<String> data= Arrays.asList("item1","item2","item3","item4","item5","item6","item7","item8","item9","item10");
-               final   ListViewDialog  dialog2 = new ListViewDialog(MainActivity.this,data);
+                final  ListViewDialog  dialog2 = new ListViewDialog(MainActivity.this,data);
                 dialog2.setdefaultAnimation();
                 dialog2.show();
                 dialog2.setOnItemClickLisener(new AdapterView.OnItemClickListener() {
@@ -84,11 +87,11 @@ public class MainActivity extends AppCompatActivity {
                 });
                 break;
             case R.id.button4:
-                LoadingDailog.Builder loadBuilder=new LoadingDailog.Builder(this)
+                IosLoading.Builder loadBuilder=new IosLoading.Builder(this)
                         .setMessage("加载中...")
                         .setCancelable(true)
                         .setCancelOutside(true);
-                final LoadingDailog dialog4=loadBuilder.create();
+                final IosLoading dialog4=loadBuilder.create();
                 dialog4.show();
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -99,6 +102,33 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.button5:
                showcountDownDialog();
+                break;
+            case R.id.button6:
+
+                RabbitLoading loading = new RabbitLoading(this);
+                loading.show();
+                break;
+            case R.id.button7:
+
+                ProtocolDialog plo = new ProtocolDialog(this, new ProtocolDialog.Callback() {
+                    @Override
+                    public void onCall(boolean accept) {
+
+                    }
+
+                    @Override
+                    public void onClick(String flag) {
+                        switch (flag){
+                            case ProtocolDialog.PrivacyPolicy:
+                                Toast.makeText(MainActivity.this,ProtocolDialog.PrivacyPolicy,Toast.LENGTH_SHORT).show();
+                                break;
+                            case ProtocolDialog.UserPolicy:
+                                Toast.makeText(MainActivity.this,ProtocolDialog.UserPolicy,Toast.LENGTH_SHORT).show();
+                                break;
+                        }
+                    }
+                });
+                plo.show();
                 break;
         }
     }
