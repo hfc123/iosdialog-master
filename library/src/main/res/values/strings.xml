@@ -2,4 +2,6 @@
     <string name="app_name">Library</string>
     <string name="park_user_protocol">《用户协议》</string>
     <string name="park_privacy_policy">《隐私政策》</string>
+    <string name="pdadscription">为了您能更好的使用每日优鲜需开启以下权限，您有权拒接或取消授权，取消后不影响您使用其他服务</string>
+    <string name="permessiondscription">您的定位信息将被用来获取您周围可供应的商品信息</string>
 </resources>

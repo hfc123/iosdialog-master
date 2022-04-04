@@ -9,5 +9,10 @@
     <dimen name="layout_20">20dp</dimen>
     <dimen name="text_14">14sp</dimen>
     <dimen name="divider_line">0.8dp</dimen>
-
+    <!--  padding dimens  -->
+    <dimen name="padding12">12dp</dimen>
+    <!-- textsize -->
+    <dimen name="size16">16sp</dimen>
+    <dimen name="size12">12sp</dimen>
+    <dimen name="size14">14sp</dimen>
 </resources>

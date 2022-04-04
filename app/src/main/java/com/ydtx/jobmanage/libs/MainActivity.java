@@ -19,6 +19,7 @@ import com.ydtx.jobmanage.library.interfaces.OnDialogCountDownLisener;
 import com.ydtx.jobmanage.library.loading.IosLoading;
 import com.ydtx.jobmanage.library.loading.IosLoading;
 import com.ydtx.jobmanage.library.loading.RabbitLoading;
+import com.ydtx.jobmanage.library.permessiondialog.PDADialog;
 
 import java.util.Arrays;
 import java.util.List;
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         butterknife.ButterKnife.bind(this);
     }
 
-    @butterknife.OnClick({R.id.button1, R.id.button2, R.id.button3, R.id.button4, R.id.button5,R.id.button6, R.id.button7})
+    @butterknife.OnClick({R.id.button1, R.id.button2, R.id.button3, R.id.button4, R.id.button5,R.id.button6, R.id.button7, R.id.button8})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.button1:
@@ -107,6 +108,12 @@ public class MainActivity extends AppCompatActivity {
 
                 RabbitLoading loading = new RabbitLoading(this);
                 loading.show();
+                break;
+            case R.id.button8:
+
+                PDADialog pdaDialog = new PDADialog(this);
+                pdaDialog.show();
+
                 break;
             case R.id.button7:
 
